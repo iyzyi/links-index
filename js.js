@@ -33,9 +33,9 @@ $.each(dh_data, function(i, item) {
   strHtml += '<div class="col-sm-6 col-md-4 mb-3 dh"><div class="row"><div class="col-xs-12"><strong class="dhname" style="color: rgb(41, 56, 70);" id="1">'+ item["name"] +'</strong></div>';
   item_data = item['item'];
   $.each(item_data, function(j, val) {
-    strHtml += '<div class="col-xs-4 mb-2"><a class="dhurl" href="/goto/'+base64encode(val['url'])+'" target="_blank" style="color: rgb(41, 56, 70);background-color: rgb(255, 255, 255);">'+ val['name'] +'</a></div>';
+    strHtml += '<div class="col-xs-4 mb-2"><a class="dhurl" href="' + val['url'] + '" target="_blank" style="color: rgb(41, 56, 70);background-color: rgb(255, 255, 255);">'+ val['name'] +'</a></div>';
   });
-  strHtml += '</div></div>';	
+  strHtml += '</div></div>';
 });
 $(".dhone").append(strHtml);
 
@@ -199,25 +199,25 @@ $(function(){
   //$('#box ul').html() === '' ? $('#box').css('height','0px') : $('#box').css('height','auto');
   var search = {
     data: [{
+        name: '谷歌',
+        img: '/images/logo_2.jpg',
+        url: 'https://www.google.com/search?q='
+      },{
       name: '百度',
       img: '/images/logo.jpg',
       url: 'https://www.baidu.com/s?wd='
     }, {
-      name: '谷歌',
-      img: '/images/logo_2.jpg',
-      url: 'https://www.google.com/search?q='
-    }, {
-      name: '必应',
+      name: 'Github',
       img: '/images/logo_3.jpg',
-      url: 'https://cn.bing.com/search?q='
+      url: 'https://github.com/search?q='
     }, {
-      name: '秘迹',
+      name: 'SOF',
       img: '/images/logo_4.jpg',
-      url: 'https://mijisou.com/?q='
+      url: 'https://stackoverflow.com/search?q='
     }, {
-      name: '优惠券',
-      img: '/images/logo_15.jpg',
-      url: 'http://www.maisx.com/index.php?r=l&kw='
+      name: 'Docker',
+      img: '/images/logo_4.jpg',
+      url: 'https://hub.docker.com/search?type=image&?q='
     }]
   }
   for(var i = 0; i < search.data.length; i++){

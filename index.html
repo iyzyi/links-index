@@ -1,0 +1,133 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"> 
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>简单导航-一个纯粹的网址导航</title>
+<link rel="stylesheet" href="//lib.baomitu.com/zui/1.9.1/css/zui.min.css">
+<script src="//lib.baomitu.com/zui/1.9.1/lib/jquery/jquery.js"></script>
+<script src="//lib.baomitu.com/zui/1.9.1/js/zui.min.js"></script>
+<script src="/dh.js"></script>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body style="background-color: rgb(241, 241, 241);">
+<header style="background-color: rgb(255, 255, 255);">
+    <div class="container" style="padding-right: 0px;padding-left: 0px;">
+        <div class="main">
+            <h1 class="logo">
+                <a href="/">
+                    <img src="/images/ico.png">
+                    <span class="sitename" style="color: rgb(72, 72, 72);">简单导航</span>
+                </a>
+            </h1>
+        </div>
+	</div>
+	<div class="not_operational"></div>
+</header>
+<div id="content" data-customize="true" data-customtheme="true" class="default-bg">
+<div class="main-index">
+<div class="container content-box">
+	<div onclick="darker()" style="background-image:url(/images/night.svg);background-size:contain;height:32px;width:32px;cursor:pointer;z-index: 100;"></div>
+	
+	<section class="sousuo">
+	  <div class="search">
+		<div class="search-box">
+		  <img class="search-icon" src="/images/logo_4.jpg">
+		  <input type="text" id="txt" class="search-input" placeholder="善用搜索" style="color: rgb(41, 56, 70);background-color: rgb(255, 255, 255);">
+		  <button class="search-btn visible-sm visible-md visible-lg" id="search-btn" style="color: rgb(41, 56, 70);background-color: rgb(255, 255, 255);">搜索</button>
+		  <i class="search-clear icon icon-remove-sign" style="display: none;"></i>
+		</div>
+		<!-- 搜索热词 -->
+		<div class="box search-hot-text" id="box" style="display: none;">
+		  <ul></ul>
+		</div>
+		<!-- 搜索引擎 -->
+		<div class="search-engine" style="display: none;background-color: rgb(255, 255, 255);">
+		  <div class="search-engine-head">
+			<strong class="search-engine-tit">选择您的默认搜索引擎：</strong>
+			<div class="search-engine-tool">搜索热词： <span id="hot-btn" class="off"></span></div>
+		  </div>
+		  <ul class="search-engine-list">
+		  </ul>
+		</div>
+	  </div>
+	</section>
+		<div class="row dh dhone" style="color: rgb(41, 56, 70);">
+		</div>
+</div>
+</div>
+</div>
+<footer class="footer text-center bg-white" style="background-color: rgb(255, 255, 255);">
+    <div class="container">
+		<span id="hitokoto">:D 获取中...</span>
+    </div>
+</footer>
+<div id="get-top" title="回到顶部" style="display: none;"><i class="icon icon-arrow-up"></i></div>
+<script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script>
+<script src="/js.js"></script>
+<script type="text/javascript">
+window.onload = checkDarker();
+	function checkDarker() {
+			if ("rgb(241, 241, 241)" == sessionStorage.getItem("bg")) {
+				for (var e = document.getElementsByClassName("name"), t = 0; t < e.length; t++) e[t].style.color = "#293846";
+				for (var o = document.getElementsByClassName("dhurl"), t = 0; t < o.length; t++) o[t].style.color = "#293846", o[t].style.backgroundColor = "#ffffff";
+				for (var s = document.getElementsByTagName("header"), t = 0; t < s.length; t++) s[t].style.backgroundColor = "#ffffff";
+				for (var f = document.getElementsByTagName("footer"), t = 0; t < f.length; t++) f[t].style.backgroundColor = "#ffffff";
+				for (var g = document.getElementsByClassName("search-input"), t = 0; t < g.length; t++) g[t].style.backgroundColor = "#ffffff",g[t].style.color = "#293846";
+				for (var h = document.getElementsByClassName("search-btn"), t = 0; t < h.length; t++) h[t].style.backgroundColor = "#ffffff",h[t].style.color = "#293846";
+				for (var p = document.getElementsByClassName("sitename"), t = 0; t < p.length; t++) p[t].style.color = "#484848";
+				for (var l = document.getElementsByClassName("dhname"), t = 0; t < l.length; t++) l[t].style.color = "#293846"
+			} else if ("rgb(63, 63, 63)" === sessionStorage.getItem("bg")) {
+				for (var n = document.getElementsByClassName("name"), t = 0; t < n.length; t++) n[t].style.color = "#c8c8c8";
+				for (var g = document.getElementsByClassName("dhurl"), t = 0; t < g.length; t++) g[t].style.color = "#c8c8c8", g[t].style.backgroundColor = "#969696";
+				for (var r = document.getElementsByTagName("header"), t = 0; t < r.length; t++) r[t].style.backgroundColor = "#3F3F3F";
+				for (var a = document.getElementsByTagName("footer"), t = 0; t < a.length; t++) a[t].style.backgroundColor = "#3F3F3F";
+				for (var h = document.getElementsByClassName("search-input"), t = 0; t < h.length; t++) h[t].style.backgroundColor = "#969696",h[t].style.color = "#c8c8c8";
+				for (var x = document.getElementsByClassName("search-btn"), t = 0; t < x.length; t++) x[t].style.backgroundColor = "#969696",x[t].style.color = "#c8c8c8";
+				for (var q = document.getElementsByClassName("sitename"), t = 0; t < q.length; t++) q[t].style.color = "#c8c8c8";
+				for (var m = document.getElementsByClassName("dhname"), t = 0; t < m.length; t++) m[t].style.color = "#c8c8c8"
+			}else{
+				sessionStorage.setItem("bg", "rgb(241, 241, 241)"),
+				sessionStorage.setItem("bgh", "rgb(255, 255, 255)"),
+				sessionStorage.setItem("urlbg", "rgb(255, 255, 255)"),
+				sessionStorage.setItem("sname", "rgb(72, 72, 72)"),
+				sessionStorage.setItem("url", "rgb(41, 56, 70)")
+			}
+	  }
+	  function darker() {
+			if ("rgb(241, 241, 241)" === sessionStorage.getItem("bg") ? (sessionStorage.setItem("bg", "rgb(63, 63, 63)"),sessionStorage.setItem("bgh", "rgb(63, 63, 63)"),sessionStorage.setItem("urlbg", "rgb(150, 150, 150)"),sessionStorage.setItem("sname", "rgb(200, 200, 200)"),sessionStorage.setItem("url", "rgb(200, 200, 200)"),sessionStorage.setItem("md", "night")) : null == sessionStorage.getItem("bg") ? (sessionStorage.setItem("bg", "rgb(63, 63, 63)"), sessionStorage.setItem("md", "night"),sessionStorage.setItem("bg", "rgb(241, 241, 241)"),sessionStorage.setItem("bgh", "rgb(255, 255, 255)"),sessionStorage.setItem("urlbg", "rgb(255, 255, 255)"), sessionStorage.setItem("sname", "rgb(72, 72, 72)"), sessionStorage.setItem("url", "rgb(41, 56, 70)")) : "rgb(63, 63, 63)" === sessionStorage.getItem("bg") && (sessionStorage.setItem("bg", "rgb(241, 241, 241)"),sessionStorage.setItem("bgh", "rgb(255, 255, 255)"),sessionStorage.setItem("urlbg", "rgb(255, 255, 255)"), sessionStorage.setItem("sname", "rgb(72, 72, 72)"), sessionStorage.setItem("url", "rgb(41, 56, 70)"), sessionStorage.setItem("md", "day")), document.body.style.backgroundColor = sessionStorage.getItem("bg"), document.body.style.color = sessionStorage.getItem("md"),"night" == sessionStorage.getItem("md")) {
+				for (var e = document.getElementsByClassName("name"), t = 0; t < e.length; t++) e[t].style.color = "#c8c8c8";
+				for (var o = document.getElementsByClassName("dhurl"), t = 0; t < o.length; t++) o[t].style.color = "#c8c8c8", o[t].style.backgroundColor = "#969696";
+				for (var s = document.getElementsByTagName("header"), t = 0; t < s.length; t++) s[t].style.backgroundColor = "#3F3F3F";
+				for (var f = document.getElementsByTagName("footer"), t = 0; t < f.length; t++) f[t].style.backgroundColor = "#3F3F3F";
+				for (var g = document.getElementsByClassName("search-input"), t = 0; t < g.length; t++) g[t].style.backgroundColor = "#969696",g[t].style.color = "#c8c8c8";
+				for (var h = document.getElementsByClassName("search-btn"), t = 0; t < h.length; t++) h[t].style.backgroundColor = "#969696",h[t].style.color = "#c8c8c8";
+				for (var p = document.getElementsByClassName("sitename"), t = 0; t < p.length; t++) p[t].style.color = "#c8c8c8";
+				for (var l = document.getElementsByClassName("dhname"), t = 0; t < l.length; t++) l[t].style.color = "#c8c8c8"
+			} else if ("day" == sessionStorage.getItem("md")) {
+				for (var n = document.getElementsByClassName("name"), t = 0; t < n.length; t++) n[t].style.color = "#293846";
+				for (var g = document.getElementsByClassName("dhurl"), t = 0; t < g.length; t++) g[t].style.color = "#293846", g[t].style.backgroundColor = "#ffffff";
+				for (var r = document.getElementsByTagName("header"), t = 0; t < r.length; t++) r[t].style.backgroundColor = "#ffffff";
+				for (var a = document.getElementsByTagName("footer"), t = 0; t < a.length; t++) a[t].style.backgroundColor = "#ffffff";
+				for (var p = document.getElementsByClassName("search-input"), t = 0; t < p.length; t++) p[t].style.backgroundColor = "#ffffff",p[t].style.color = "#293846";
+				for (var x = document.getElementsByClassName("search-btn"), t = 0; t < x.length; t++) x[t].style.backgroundColor = "#ffffff",x[t].style.color = "#293846";
+				for (var q = document.getElementsByClassName("sitename"), t = 0; t < q.length; t++) q[t].style.color = "#484848";
+				for (var m = document.getElementsByClassName("dhname"), t = 0; t < m.length; t++) m[t].style.color = "#293846"
+			}
+	  }
+	  document.body.style.backgroundColor = sessionStorage.getItem("bg");
+	  for (var n = document.getElementsByClassName("name"), t = 0; t < n.length; t++) n[t].style.color = sessionStorage.getItem("url");
+	  for (var s = document.getElementsByTagName("header"), t = 0; t < s.length; t++) s[t].style.backgroundColor = sessionStorage.getItem("bgh");
+	  for (var p = document.getElementsByClassName("sitename"), t = 0; t < p.length; t++) p[t].style.color = sessionStorage.getItem("sname");
+	  for (var l = document.getElementsByClassName("dhname"), t = 0; t < l.length; t++) l[t].style.color = sessionStorage.getItem("url");
+	  for (var q = document.getElementsByClassName("search-input"), t = 0; t < q.length; t++) q[t].style.backgroundColor = sessionStorage.getItem("urlbg"),q[t].style.color = sessionStorage.getItem("url");
+	  for (var x = document.getElementsByClassName("search-btn"), t = 0; t < x.length; t++) x[t].style.backgroundColor = sessionStorage.getItem("urlbg"),x[t].style.color = sessionStorage.getItem("url");
+	  for (var o = document.getElementsByClassName("dhurl"), t = 0; t < o.length; t++) o[t].style.backgroundColor = sessionStorage.getItem("urlbg"),o[t].style.color = sessionStorage.getItem("url");
+	  for (var f = document.getElementsByTagName("footer"), t = 0; t < f.length; t++) f[t].style.backgroundColor = sessionStorage.getItem("bgh");
+	  document.body.style.color = sessionStorage.getItem("md");
+	
+</script>
+<script type="text/javascript" src="//js.users.51.la/19916167.js"></script>
+</body>
+</html>

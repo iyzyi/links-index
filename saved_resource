@@ -1,1 +1,0 @@
-(function hitokoto(){var hitokoto="你怎么这么奇奇怪怪怪。。怪可爱的";var dom=document.querySelector('#hitokoto');Array.isArray(dom)?dom[0].innerText=hitokoto:dom.innerText=hitokoto;})()

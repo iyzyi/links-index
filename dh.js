@@ -13,6 +13,10 @@ var dh_data = [
             {
                 "name": "hexo博客",
                 "url": "http://hexo.iyzyi.com"
+            },
+            {
+                "name": "藏经阁",
+                "url": "http://mirrors.iyzyi.com"
             },        
             {
                 "name": "Github",
@@ -28,14 +32,6 @@ var dh_data = [
         "name":"服务",
         "item": [
             {
-                "name": "宝塔-1",
-                "url": "http://bt.iyzyi.com"
-            },
-            {
-                "name": "宝塔-2",
-                "url": "http://bt.iyzyi.cn"
-            },
-            {
                 "name": "下载-1",
                 "url": "http://aria.iyzyi.com"
             },
@@ -50,7 +46,40 @@ var dh_data = [
             {
                 "name": "文件-2",
                 "url": "http://file.iyzyi.cn"
+            },
+            {
+                "name": "可道云-1",
+                "url": "http://kod.iyzyi.com"
+            }, 
+            {
+                "name": "可道云-2",
+                "url": "http://kod.iyzyi.cn"
             }
+        ]
+    },
+    {
+        "name":"服务",
+        "item": [
+            {
+                "name": "宝塔-1",
+                "url": "http://bt.iyzyi.com"
+            },
+            {
+                "name": "宝塔-2",
+                "url": "http://bt.iyzyi.cn"
+            },
+            {
+                "name": "宝塔-3",
+                "url": "http://iyzy.cc:8888/nimda_"
+            },
+            {
+                "name": "sqlilabs",
+                "url": "http://sql.iyzyi.com"
+            },
+            {
+                "name": "DOS Game",
+                "url": "http://game.iyzy.cc"
+            },
         ]
     }
 ]
